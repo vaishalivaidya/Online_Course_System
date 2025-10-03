@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Online Course System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Approved Courses</h2>
+  <button onclick="window.location='login.html'">Login</button>
+  <button onclick="window.location='register.html'">Register</button>
+  <table id="coursesTable">
+    <thead>
+      <tr><th>Title</th><th>Fee</th><th>Category</th><th>Status</th><th>Action</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <script src="app.js"></script>
+  <script>
+    loadCourses(); // call backend to fetch approved courses
+  </script>
+</body>
+</html>

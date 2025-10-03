@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Register</h2>
+  <form onsubmit="registerUser(event)">
+    <label>Username:</label><input type="text" id="regUsername"><br>
+    <label>Password:</label><input type="password" id="regPassword"><br>
+    <label>Role:</label>
+    <select id="regRole">
+      <option>STUDENT</option>
+      <option>INSTRUCTOR</option>
+      <option>ADMIN</option>
+    </select><br>
+    <button type="submit">Register</button>
+  </form>
+  <div id="message"></div>
+  <script src="app.js"></script>
+</body>
+</html>
