@@ -2,21 +2,127 @@
 <html>
 <head>
   <title>Online Course System</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e60f6c, #760d5a);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+      color: #333;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #fff;
+      text-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .btn-group {
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      border: none;
+      border-radius: 6px;
+      background-image: linear-gradient(to right, #0d0009, #0e0b0e);
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(45, 2, 52, 0.6);
+      transition: transform 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    table {
+      width: 90%;
+      max-width: 900px;
+      border-collapse: collapse;
+      background-color: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+    }
+
+    th {
+      background-color: #9d088e;
+      color: white;
+      font-size: 16px;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    #coursesTable td button {
+      padding: 6px 12px;
+      background-color: #28a745;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #coursesTable td button:hover {
+      background-color: #218838;
+    }
+  </style>
 </head>
 <body>
   <h2>Approved Courses</h2>
-  <button onclick="window.location='login.html'">Login</button>
-  <button onclick="window.location='register.html'">Register</button>
+  <div class="btn-group">
+    <button onclick="window.location='login.html'">Login</button>
+    <button onclick="window.location='register.html'">Register</button>
+  </div>
   <table id="coursesTable">
     <thead>
       <tr><th>Title</th><th>Fee</th><th>Category</th><th>Status</th><th>Action</th></tr>
     </thead>
-    <tbody></tbody>
+    <tbody>
+      <tr>
+        <td>Java Programming</td>
+        <td>₹3000</td>
+        <td>Development</td>
+        <td>APPROVED</td>
+        <td><button onclick="alert('Enrolled in Java Programming')">Enroll</button></td>
+      </tr>
+      <tr>
+        <td>Web Design Basics</td>
+        <td>₹2500</td>
+        <td>Design</td>
+        <td>APPROVED</td>
+        <td><button onclick="alert('Enrolled in Web Design Basics')">Enroll</button></td>
+      </tr>
+      <tr>
+        <td>Spring Boot Mastery</td>
+        <td>₹4000</td>
+        <td>Backend</td>
+        <td>APPROVED</td>
+        <td><button onclick="alert('Enrolled in Spring Boot Mastery')">Enroll</button></td>
+      </tr>
+    </tbody>
   </table>
+
   <script src="app.js"></script>
   <script>
-    loadCourses(); // call backend to fetch approved courses
+    // Uncomment this if you want to load dynamic data from backend
+    // loadCourses();
   </script>
 </body>
 </html>

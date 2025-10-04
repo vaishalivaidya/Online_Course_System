@@ -21,21 +21,43 @@ async function loadCourses() {
   });
 }
 
-// Register user
+// // Register user
+// async function registerUser(e) {
+//   e.preventDefault();
+//   const username = document.getElementById("regUsername").value;
+//   const password = document.getElementById("regPassword").value;
+//   const role = document.getElementById("regRole").value;
+//   const res = await fetch(BASE + "/auth/register", {
+//     method: "POST",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify({ username, password, role })
+//   });
+//   document.getElementById("message").innerText = await res.text();
+// }
+
 async function registerUser(e) {
   e.preventDefault();
   const username = document.getElementById("regUsername").value;
   const password = document.getElementById("regPassword").value;
   const role = document.getElementById("regRole").value;
+
   const res = await fetch(BASE + "/auth/register", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ username, password, role })
   });
-  document.getElementById("message").innerText = await res.text();
+
+  const message = await res.text();
+  document.getElementById("message").innerText = message;
+
+  if (res.ok) {
+    setTimeout(() => {
+      window.location.href = "login.html"; // Adjust path if needed
+    }, 1500); // Delay to show message before redirect
+  }
 }
 
-// Login
+// // Login
 async function login(e) {
   e.preventDefault();
   const username = document.getElementById("username").value;
@@ -51,6 +73,7 @@ async function login(e) {
   document.getElementById("message").innerText = "Login successful!";
   setTimeout(() => window.location = "index.html", 1000);
 }
+
 
 // Enroll in course
 async function enroll(courseId) {
